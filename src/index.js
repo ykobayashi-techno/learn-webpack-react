@@ -9,5 +9,4 @@ function component() {
   return element;
 }
 
-const element = document.getElementById("content");
-element.appendChild(component());
+document.body.appendChild(component());
