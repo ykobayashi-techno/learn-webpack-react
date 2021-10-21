@@ -1,4 +1,3 @@
-import _ from "lodash";
 import { printConsoleMessage } from "./print";
 
 function component() {
@@ -6,10 +5,10 @@ function component() {
   const message = document.createElement("div");
   const button = document.createElement("button");
   // Lodash, currently included via a script, is required for this line to work
-  message.innerHTML = _.join(["Hello", "webpack"], " ");
+  message.innerHTML = ["Hello", "webpack"].join(" ");
 
   button.innerHTML = "Click Button";
-  button.onclick = printConsoleMessage;
+  button.onclick = () => printConsoleMessage("click!");
 
   content.appendChild(message);
   content.appendChild(button);
