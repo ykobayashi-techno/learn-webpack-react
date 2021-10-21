@@ -5,13 +5,13 @@ module.exports = {
   // development に設定するとソースマップ有効でJSファイルが出力される
   mode: "development",
 
-  entry: "./src/index.ts",
+  entry: "./src/main.tsx",
 
   module: {
     rules: [
       {
-        // 拡張子 .ts の場合
-        test: /\.ts$/,
+        // 拡張子 .ts, .tsx を変換する
+        test: /\.tsx?$/,
         // TypeScript をコンパイルする
         use: "ts-loader",
       },
@@ -24,7 +24,7 @@ module.exports = {
   // 記載したほうがトラブルに巻き込まれにくい。
   resolve: {
     // 拡張子を配列で指定
-    extensions: [".ts", ".js"],
+    extensions: [".ts", ".tsx", ".js", ".json"],
   },
 
   output: {
