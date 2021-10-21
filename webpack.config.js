@@ -4,7 +4,8 @@ module.exports = {
   // モード値を production に設定すると最適化された状態で、
   // development に設定するとソースマップ有効でJSファイルが出力される
   mode: "development",
-
+  // tsファイルをChromeのDevToolsでデバッグするための指定
+  devtool: "inline-source-map",
   entry: "./src/main.tsx",
 
   module: {
