@@ -47,4 +47,10 @@ module.exports = {
       template: path.resolve(__dirname, "index.html"),
     }),
   ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
+    historyApiFallback: true,
+  },
 };
