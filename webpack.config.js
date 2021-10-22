@@ -14,7 +14,19 @@ module.exports = {
         // 拡張子 .ts, .tsx を変換する
         test: /\.tsx?$/,
         // TypeScript をコンパイルする
-        use: "ts-loader",
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: [
+                "@babel/preset-env",
+                "@babel/preset-react",
+                "@babel/preset-typescript",
+              ],
+              plugins: ["@babel/plugin-transform-runtime"],
+            },
+          },
+        ],
       },
     ],
   },
